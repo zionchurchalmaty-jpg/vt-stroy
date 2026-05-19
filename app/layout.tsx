@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description:
     "Платформа для поиска врачей с полными профилями, кейсами и отзывами",
   verification: {
-    google: "google77b0304466a9131a", 
+    google: "93uo3pwSIHWiDoS_FO6bh53dLtzlPWprz79PYXen4ZI", 
   },
 };
 
