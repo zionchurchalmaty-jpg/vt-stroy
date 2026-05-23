@@ -109,7 +109,7 @@ export function ContentForm({
     setTags(parsed);
   };
 
-  const handleSubmit = async (submitStatus?: ContentStatus) => {
+const handleSubmit = async (submitStatus?: ContentStatus) => {
     if (!user) return;
 
     const finalStatus = submitStatus || status;
@@ -128,6 +128,14 @@ export function ContentForm({
     setSaving(true);
 
     try {
+      const cleanedSeo = { ...seo };
+      if ((cleanedSeo as any).schemaMarkup) {
+        (cleanedSeo as any).schemaMarkup = (cleanedSeo as any).schemaMarkup
+          .replace(/<script[^>]*>/gi, '')
+          .replace(/<\/script>/gi, '')
+          .trim();
+      }
+
       const input: any = {
         contentType,
         title: title.trim(),
@@ -136,7 +144,7 @@ export function ContentForm({
         image: image || "",
         tags,
         status: finalStatus,
-        seo,
+        seo: cleanedSeo,
         isSeo,
       };
 

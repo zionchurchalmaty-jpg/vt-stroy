@@ -87,9 +87,6 @@ export function SEOFields({ value, onChange, defaultTitle }: SEOFieldsProps) {
           onChange={(e) => onChange({ ...value, schemaMarkup: e.target.value })}
           className="min-h-[150px] font-mono text-xs"
         />
-        <p className="text-xs text-muted-foreground">
-          Вставьте сюда код микроразметки вместе с тегами &lt;script&gt;
-        </p>
       </div>
     </div>
   );
