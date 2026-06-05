@@ -6,13 +6,7 @@ import Image from "next/image";
 export default async function Portfolio() {
   const projectsData = await getPublishedContent("projects", 6);
 
-  const fallbackProjects = [
-    { id: 1, slug: "sklad-2500", title: { ru: "Складской комплекс 2 500 м²" }, location: { ru: "г. Алматы" } },
-    { id: 2, slug: "ceh-1800", title: { ru: "Производственный цех 1 800 м²" }, location: { ru: "Алматинская обл." } },
-    { id: 3, slug: "pavilion-450", title: { ru: "Торговый павильон 450 м²" }, location: { ru: "г. Алматы" } },
-  ];
-
-  const projects = projectsData.length > 0 ? projectsData : fallbackProjects;
+  const projects = projectsData;
 
   return (
     <section id="projects" className="py-24 bg-white">
