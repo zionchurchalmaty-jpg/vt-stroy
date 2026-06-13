@@ -27,13 +27,25 @@ export const COLLECTION_MAP: Record<ContentType, string> = {
   content: "content",
   projects: "projects",
   leads: "leads",
+  testimonials: "testimonials",
 };
 
 export const PLACEHOLDERS: Record<ContentType, string> = {
   content: "/images/content-placeholder.png",
   projects: "/images/project-placeholder.png",
   leads: "/images/project-placeholder.png",
+  testimonials: "/images/placeholder.png",
 };
+
+export function getCollection(type: ContentType): string {
+  switch (type) {
+    case "content": return "content";
+    case "projects": return "projects";
+    case "leads": return "leads";
+    case "testimonials": return "testimonials";
+    default: return "content";
+  }
+}
 
 export function generateSlug(title: string): string {
   return slugify(title, { lower: true, strict: true, locale: "ru" });
@@ -42,19 +54,6 @@ export function generateSlug(title: string): string {
 export function getPlaceholder(type: ContentType, isSeo?: boolean): string {
   if (type === "content" && isSeo) return "/images/seo-placeholder.png";
   return PLACEHOLDERS[type] || "/images/placeholder.png";
-}
-
-export function getCollection(type: ContentType): string {
-  switch (type) {
-    case "content":
-      return "content";
-    case "projects":
-      return "projects";
-    case "leads":
-      return "leads";
-    default:
-      return "content";
-  }
 }
 
 export function serializeFirebaseData(data: any): any {

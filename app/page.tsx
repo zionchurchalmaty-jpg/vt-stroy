@@ -4,6 +4,7 @@ import ContactBlock from "@/components/ContactBlock";
 import Advantages from "@/components/Advantages";
 import Portfolio from "@/components/Portfolio";
 import Faq from "@/components/Faq";
+import Testimonials from "@/components/Testimonials";
 
 export default function HomePage() {
   return (
@@ -13,6 +14,7 @@ export default function HomePage() {
       <ContactBlock />
       <Advantages />
       <Portfolio />
+      <Testimonials />
       <Faq />
     </main>
   );

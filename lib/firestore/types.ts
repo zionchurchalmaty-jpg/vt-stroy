@@ -1,4 +1,4 @@
-export type ContentType = "content" | "projects" | "leads";
+export type ContentType = "content" | "projects" | "leads" | "testimonials";
 export type ContentStatus = "draft" | "published";
 
 export interface LocalizedText {
@@ -79,6 +79,8 @@ export interface Content {
   isSeo?: boolean;
   serviceId?: string;
   readingTime?: string;
+  role?: string;
+  rating?: number;
 }
 
 export interface ContentInput extends Partial<Content> {

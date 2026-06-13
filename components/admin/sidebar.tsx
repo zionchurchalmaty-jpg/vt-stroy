@@ -14,12 +14,14 @@ import {
   Menu,
   X,
   FolderOpen,
+  Star,
 } from "lucide-react";
 
 const navItems = [
   { name: "Обзор", href: "/admin", icon: LayoutDashboard, exact: true },
   { name: "Проекты", href: "/admin/projects", icon: FolderOpen },
   { name: "Записи (Блог)", href: "/admin/content", icon: FileText },
+  { name: "Отзывы", href: "/admin/testimonials", icon: Star },
 ];
 
 export function AdminSidebar() {
